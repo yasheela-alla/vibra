@@ -69,12 +69,21 @@ export default {
 					200: '#d9ceff',
 					300: '#bea6ff',
 					400: '#9f75ff',
-					500: '#8344ff',
-					600: '#7122ff',
+					500: '#9146FF', // Twitch purple
+					600: '#772ce8', // Darker Twitch purple
 					700: '#6310f5',
 					800: '#520dc6',
 					900: '#450da1',
 					950: '#2a0979',
+				},
+				twitch: {
+					purple: '#9146FF',
+					darkPurple: '#772ce8',
+					black: '#0E0E10',
+					gray: '#1F1F23',
+					lightGray: '#26262C',
+					red: '#E91916',
+					green: '#00FF7F',
 				},
 			},
 			borderRadius: {

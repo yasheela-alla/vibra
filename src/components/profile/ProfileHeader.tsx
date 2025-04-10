@@ -1,9 +1,8 @@
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Bell, Heart, Calendar, Quote } from 'lucide-react';
+import { Calendar, Quote } from 'lucide-react';
 
 interface ProfileHeaderProps {
   username: string;
@@ -32,20 +31,20 @@ const ProfileHeader = ({
     <Card className="border-0 overflow-hidden">
       <div className="relative">
         {/* Banner with quote instead of image */}
-        <div className="h-40 md:h-60 bg-gradient-to-r from-accent/40 to-accent/20 flex items-center justify-center p-6">
+        <div className="h-40 md:h-60 bg-gradient-to-r from-purple-600/40 to-purple-900/20 flex items-center justify-center p-6">
           <div className="flex items-center gap-3 text-center max-w-xl">
-            <Quote size={28} className="text-accent opacity-70" />
+            <Quote size={28} className="text-purple-400 opacity-70" />
             <p className="text-lg md:text-xl italic font-medium opacity-80">{streamerQuote}</p>
           </div>
           <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
         </div>
         
-        {/* Avatar and basic info - fixed positioning */}
+        {/* Avatar - repositioned to not block the username */}
         <div className="absolute left-6 -bottom-14 md:-bottom-16 flex items-end">
           <div className="relative">
             <Avatar className="h-20 w-20 md:h-28 md:w-28 ring-4 ring-background">
               <AvatarImage src={avatarUrl} alt={username} />
-              <AvatarFallback className="bg-accent text-white text-2xl">
+              <AvatarFallback className="bg-purple-600 text-white text-2xl">
                 {username.substring(0, 2).toUpperCase()}
               </AvatarFallback>
             </Avatar>
@@ -59,23 +58,11 @@ const ProfileHeader = ({
             )}
           </div>
         </div>
-        
-        {/* Action buttons */}
-        <div className="absolute right-6 bottom-4 flex gap-3">
-          <Button variant="outline" className="bg-background/80 backdrop-blur-sm">
-            <Bell className="mr-2 h-4 w-4" />
-            Subscribe
-          </Button>
-          <Button className="bg-accent hover:bg-accent/80">
-            <Heart className="mr-2 h-4 w-4" />
-            Follow
-          </Button>
-        </div>
       </div>
       
       <CardContent className="pt-20 p-6"> {/* Increased top padding to make room for avatar */}
         <div className="space-y-4">
-          <div>
+          <div className="ml-2 md:ml-0">
             <h1 className="text-2xl font-bold flex items-center gap-2 text-primary">
               {username}
             </h1>
