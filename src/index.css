@@ -119,7 +119,7 @@
   }
   
   .hover-stream-card {
-    @apply relative z-10 group;
+    @apply relative z-10;
   }
   
   .hover-stream-card::after {

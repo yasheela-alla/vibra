@@ -32,7 +32,7 @@ const StreamCard = ({
   
   return (
     <Link to={`/stream/${streamer}`}>
-      <Card className={cn("border-0 bg-transparent hover-stream-card", className)}>
+      <Card className={cn("border-0 bg-transparent hover-stream-card group", className)}>
         <div className="stream-card">
           <div className="relative aspect-video">
             <img 
