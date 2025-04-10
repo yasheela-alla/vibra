@@ -56,7 +56,7 @@ const StreamCard = ({
             <div className="flex items-start gap-3">
               <Avatar className="h-9 w-9 mt-1">
                 <AvatarImage src={avatarUrl} alt={streamer} />
-                <AvatarFallback className="bg-vibra-600 text-white">
+                <AvatarFallback className="bg-accent text-white">
                   {streamer.substring(0, 2).toUpperCase()}
                 </AvatarFallback>
               </Avatar>

@@ -7,11 +7,11 @@ import PastStreams from '@/components/profile/PastStreams';
 
 // Mock data for the profile
 const mockProfileData = {
-  username: 'shanks_ttv',
+  username: 'Yasheela',
   followers: 350000,
   following: 120,
-  bio: 'Former professional VALORANT player. Streaming daily gameplay, tips, and hanging out with chat.',
-  joinDate: 'August 2019',
+  bio: 'Professional streamer sharing gameplay tips, entertaining content, and hanging out with chat.',
+  joinDate: 'April 2023',
   isLive: true,
 };
 
@@ -20,56 +20,56 @@ const mockPastStreams = [
   {
     id: '1',
     title: 'VALORANT Ranked Grind to Radiant',
-    streamer: 'shanks_ttv',
+    streamer: 'Yasheela',
     game: 'VALORANT',
     viewers: 5700,
     thumbnailUrl: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_shanks_ttv-440x248.jpg',
-    date: '2022-06-12'
+    date: '2023-04-12'
   },
   {
     id: '2',
     title: 'Pro Scrims w/ Team',
-    streamer: 'shanks_ttv',
+    streamer: 'Yasheela',
     game: 'VALORANT',
     viewers: 6200,
     thumbnailUrl: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_shanks_ttv-440x248.jpg',
-    date: '2022-06-10'
+    date: '2023-04-10'
   },
   {
     id: '3',
     title: 'VCT Qualifiers Watch Party',
-    streamer: 'shanks_ttv',
+    streamer: 'Yasheela',
     game: 'VALORANT',
     viewers: 4800,
     thumbnailUrl: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_shanks_ttv-440x248.jpg',
-    date: '2022-06-08'
+    date: '2023-04-08'
   },
   {
     id: '4',
     title: 'Immortal Gameplay - Road to Radiant',
-    streamer: 'shanks_ttv',
+    streamer: 'Yasheela',
     game: 'VALORANT',
     viewers: 5100,
     thumbnailUrl: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_shanks_ttv-440x248.jpg',
-    date: '2022-06-06'
+    date: '2023-04-06'
   },
   {
     id: '5',
     title: 'Ranked with Viewers',
-    streamer: 'shanks_ttv',
+    streamer: 'Yasheela',
     game: 'VALORANT',
     viewers: 4500,
     thumbnailUrl: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_shanks_ttv-440x248.jpg',
-    date: '2022-06-04'
+    date: '2023-04-04'
   },
   {
     id: '6',
     title: 'New Map First Look',
-    streamer: 'shanks_ttv',
+    streamer: 'Yasheela',
     game: 'VALORANT',
     viewers: 7200,
     thumbnailUrl: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_shanks_ttv-440x248.jpg',
-    date: '2022-06-02'
+    date: '2023-04-02'
   },
 ];
 

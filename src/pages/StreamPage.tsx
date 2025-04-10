@@ -10,11 +10,11 @@ import { useIsMobile } from '@/hooks/use-mobile';
 // Mock data for the stream
 const mockStreamData = {
   title: 'VALORANT Ranked Grind to Radiant',
-  streamer: 'shanks_ttv',
+  streamer: 'Yasheela',
   game: 'VALORANT',
   viewers: 5700,
   followers: 350000,
-  description: 'Former pro player grinding ranked in VALORANT. !socials !setup in chat',
+  description: 'Professional streamer sharing gameplay tips, entertaining content, and hanging out with chat.',
   thumbnailUrl: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_shanks_ttv-440x248.jpg'
 };
 

@@ -21,8 +21,13 @@ interface Channel {
   viewers?: number;
 }
 
+interface SidebarProps {
+  collapsed: boolean;
+  setCollapsed: (collapsed: boolean) => void;
+}
+
 const recommendedChannels: Channel[] = [
-  { id: '1', username: 'shanks_ttv', game: 'VALORANT', isLive: true, viewers: 5700 },
+  { id: '1', username: 'Yasheela', game: 'VALORANT', isLive: true, viewers: 5700 },
   { id: '2', username: 'Caedrel', game: 'League of Legends', isLive: true, viewers: 34700 },
   { id: '3', username: 'VALORANT_EMEA', game: 'VALORANT', isLive: true, viewers: 11800 },
   { id: '4', username: 'Sliggyy', game: 'VALORANT', isLive: true, viewers: 3800 },
@@ -33,18 +38,20 @@ const recommendedChannels: Channel[] = [
 ];
 
 const followedChannels: Channel[] = [
-  { id: '1', username: 'shanks_ttv', game: 'VALORANT', isLive: true, viewers: 5700 },
+  { id: '1', username: 'Yasheela', game: 'VALORANT', isLive: true, viewers: 5700 },
   { id: '2', username: 'Caedrel', game: 'League of Legends', isLive: true, viewers: 34700 },
   { id: '3', username: 'VALORANT_EMEA', game: 'VALORANT', isLive: false },
   { id: '4', username: 'Sliggyy', game: 'VALORANT', isLive: false },
   { id: '5', username: 'Subroza', game: 'VALORANT', isLive: false },
 ];
 
-const Sidebar = () => {
-  const [collapsed, setCollapsed] = useState(false);
-  
+const Sidebar = ({ collapsed, setCollapsed }: SidebarProps) => {
   return (
-    <aside className={`fixed top-16 left-0 bottom-0 bg-sidebar border-r border-border flex flex-col z-40 transition-all duration-300 ${collapsed ? 'w-16' : 'w-60'}`}>
+    <aside 
+      className={`fixed top-16 left-0 bottom-0 bg-sidebar border-r border-border flex flex-col z-40 transition-all duration-300 ${
+        collapsed ? 'w-16' : 'w-60'
+      }`}
+    >
       <div className="flex flex-col p-3 flex-1 overflow-y-auto scrollbar-none">
         <div className="flex items-center justify-between mb-4">
           <h3 className={`font-semibold text-white ${collapsed ? 'sr-only' : ''}`}>
@@ -72,7 +79,7 @@ const Sidebar = () => {
                     <div className="relative">
                       <Avatar className="h-8 w-8">
                         <AvatarImage src={channel.avatarUrl} alt={channel.username} />
-                        <AvatarFallback className="bg-vibra-700 text-white">
+                        <AvatarFallback className="bg-accent text-white">
                           {channel.username.substring(0, 2).toUpperCase()}
                         </AvatarFallback>
                       </Avatar>
@@ -83,7 +90,7 @@ const Sidebar = () => {
                     
                     {!collapsed && (
                       <div className="ml-3 flex-1 truncate">
-                        <p className="text-sm font-medium truncate text-white group-hover:text-vibra-400">
+                        <p className="text-sm font-medium truncate text-white group-hover:text-accent">
                           {channel.username}
                         </p>
                         <p className="text-xs text-muted-foreground truncate">{channel.game}</p>
@@ -126,7 +133,7 @@ const Sidebar = () => {
                 <div className="relative">
                   <Avatar className="h-8 w-8">
                     <AvatarImage src={channel.avatarUrl} alt={channel.username} />
-                    <AvatarFallback className="bg-vibra-600 text-white">
+                    <AvatarFallback className="bg-accent text-white">
                       {channel.username.substring(0, 2).toUpperCase()}
                     </AvatarFallback>
                   </Avatar>
@@ -136,7 +143,7 @@ const Sidebar = () => {
                 </div>
                 
                 <div className="ml-3 flex-1 truncate">
-                  <p className="text-sm font-medium truncate text-white group-hover:text-vibra-400">
+                  <p className="text-sm font-medium truncate text-white group-hover:text-accent">
                     {channel.username}
                   </p>
                   <p className="text-xs text-muted-foreground truncate">{channel.game}</p>

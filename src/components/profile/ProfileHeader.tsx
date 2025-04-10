@@ -21,7 +21,7 @@ const ProfileHeader = ({
   followers,
   following,
   avatarUrl,
-  bannerUrl,
+  bannerUrl = "/lovable-uploads/55836f5e-aa1a-488f-8f95-dfc554d30e8c.png",
   isLive = false,
   joinDate,
   bio
@@ -34,16 +34,22 @@ const ProfileHeader = ({
       <div className="relative">
         {/* Banner */}
         <div 
-          className="h-40 md:h-60 bg-gradient-to-r from-vibra-800 to-vibra-500" 
-          style={bannerUrl ? { backgroundImage: `url(${bannerUrl})`, backgroundSize: 'cover', backgroundPosition: 'center' } : {}}
-        />
+          className="h-40 md:h-60 bg-gradient-to-r from-accent/50 to-accent" 
+          style={bannerUrl ? { 
+            backgroundImage: `url(${bannerUrl})`, 
+            backgroundSize: 'cover', 
+            backgroundPosition: 'center' 
+          } : {}}
+        >
+          <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+        </div>
         
         {/* Avatar and basic info */}
         <div className="absolute left-6 bottom-0 transform translate-y-1/2 flex items-end">
           <div className="relative">
             <Avatar className="h-20 w-20 md:h-28 md:w-28 ring-4 ring-background">
               <AvatarImage src={avatarUrl} alt={username} />
-              <AvatarFallback className="bg-vibra-700 text-white text-2xl">
+              <AvatarFallback className="bg-accent text-white text-2xl">
                 {username.substring(0, 2).toUpperCase()}
               </AvatarFallback>
             </Avatar>
@@ -64,7 +70,7 @@ const ProfileHeader = ({
             <Bell className="mr-2 h-4 w-4" />
             Subscribe
           </Button>
-          <Button className="bg-vibra-600 hover:bg-vibra-700">
+          <Button className="bg-accent hover:bg-accent/80">
             <Heart className="mr-2 h-4 w-4" />
             Follow
           </Button>
@@ -74,7 +80,7 @@ const ProfileHeader = ({
       <CardContent className="pt-16 p-6">
         <div className="space-y-4">
           <div>
-            <h1 className="text-2xl font-bold flex items-center gap-2">
+            <h1 className="text-2xl font-bold flex items-center gap-2 text-primary">
               {username}
             </h1>
             {joinDate && (
