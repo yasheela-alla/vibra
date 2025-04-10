@@ -26,7 +26,7 @@ const ProfileHeader = ({
 }: ProfileHeaderProps) => {
   const formattedFollowers = followers > 999 ? `${(followers / 1000).toFixed(1)}K` : followers;
   const formattedFollowing = following > 999 ? `${(following / 1000).toFixed(1)}K` : following;
-  const streamerQuote = ""When you don't give up, you cannot fail." — Ninja";
+  const streamerQuote = "\"When you don't give up, you cannot fail.\" — Ninja";
   
   return (
     <Card className="border-0 overflow-hidden">
