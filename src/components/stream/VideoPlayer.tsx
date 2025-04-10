@@ -50,7 +50,7 @@ const VideoPlayer = ({ thumbnailUrl, streamer }: VideoPlayerProps) => {
         
         <Badge 
           variant="destructive" 
-          className="absolute top-4 left-4 bg-red-600 text-white font-bold"
+          className="absolute top-4 left-4 bg-red-600 text-white font-bold text-xs"
         >
           LIVE
         </Badge>
@@ -61,65 +61,65 @@ const VideoPlayer = ({ thumbnailUrl, streamer }: VideoPlayerProps) => {
             showControls || !isPlaying ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          {/* Center play/pause button */}
+          {/* Center play/pause button - reduce size by 15% */}
           {!isPlaying && (
             <div className="absolute inset-0 flex items-center justify-center">
               <Button 
                 variant="ghost" 
                 size="icon" 
-                className="h-20 w-20 text-white opacity-80 hover:opacity-100"
+                className="h-16 w-16 text-white opacity-80 hover:opacity-100" // Reduced from h-20 w-20
                 onClick={(e) => {
                   e.stopPropagation();
                   setIsPlaying(true);
                 }}
               >
-                <Play size={64} />
+                <Play size={54} /> {/* Reduced from 64 */}
               </Button>
             </div>
           )}
           
           {/* Bottom controls */}
-          <div className="absolute bottom-0 left-0 right-0 p-4 flex flex-col gap-2">
+          <div className="absolute bottom-0 left-0 right-0 p-3 flex flex-col gap-2"> {/* Reduced padding */}
             {/* Progress bar */}
             <div className="flex items-center gap-2">
-              <span className="text-white text-sm">00:00</span>
+              <span className="text-white text-xs">00:00</span> {/* Reduced text size */}
               <Slider
                 defaultValue={[12]}
                 max={100}
                 step={1}
                 className="flex-1"
               />
-              <span className="text-white text-sm">LIVE</span>
+              <span className="text-white text-xs">LIVE</span> {/* Reduced text size */}
             </div>
             
-            {/* Control buttons */}
+            {/* Control buttons - reduce size by 15% */}
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <Button 
                   variant="ghost" 
                   size="icon" 
-                  className="h-8 w-8 text-white"
+                  className="h-7 w-7 text-white" // Reduced from h-8 w-8
                   onClick={(e) => {
                     e.stopPropagation();
                     setIsPlaying(!isPlaying);
                   }}
                 >
-                  {isPlaying ? <Pause size={18} /> : <Play size={18} />}
+                  {isPlaying ? <Pause size={15} /> : <Play size={15} />} {/* Reduced from 18 */}
                 </Button>
                 
                 <Button 
                   variant="ghost" 
                   size="icon" 
-                  className="h-8 w-8 text-white"
+                  className="h-7 w-7 text-white" // Reduced from h-8 w-8
                   onClick={(e) => {
                     e.stopPropagation();
                     setIsMuted(!isMuted);
                   }}
                 >
-                  {isMuted || volume === 0 ? <VolumeX size={18} /> : <Volume2 size={18} />}
+                  {isMuted || volume === 0 ? <VolumeX size={15} /> : <Volume2 size={15} />} {/* Reduced from 18 */}
                 </Button>
                 
-                <div className="w-24 hidden sm:block">
+                <div className="w-20 hidden sm:block"> {/* Reduced from w-24 */}
                   <Slider
                     defaultValue={[volume]}
                     max={100}
@@ -137,28 +137,28 @@ const VideoPlayer = ({ thumbnailUrl, streamer }: VideoPlayerProps) => {
                 <Button 
                   variant="ghost" 
                   size="icon" 
-                  className="h-8 w-8 text-white"
+                  className="h-7 w-7 text-white" // Reduced from h-8 w-8
                   onClick={(e) => e.stopPropagation()}
                 >
-                  <SkipForward size={18} />
+                  <SkipForward size={15} /> {/* Reduced from 18 */}
                 </Button>
                 
                 <Button 
                   variant="ghost" 
                   size="icon" 
-                  className="h-8 w-8 text-white"
+                  className="h-7 w-7 text-white" // Reduced from h-8 w-8
                   onClick={(e) => e.stopPropagation()}
                 >
-                  <Settings size={18} />
+                  <Settings size={15} /> {/* Reduced from 18 */}
                 </Button>
                 
                 <Button 
                   variant="ghost" 
                   size="icon" 
-                  className="h-8 w-8 text-white"
+                  className="h-7 w-7 text-white" // Reduced from h-8 w-8
                   onClick={(e) => e.stopPropagation()}
                 >
-                  <Maximize size={18} />
+                  <Maximize size={15} /> {/* Reduced from 18 */}
                 </Button>
               </div>
             </div>

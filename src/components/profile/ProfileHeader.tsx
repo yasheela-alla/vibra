@@ -3,14 +3,13 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Bell, Heart, Calendar } from 'lucide-react';
+import { Bell, Heart, Calendar, Quote } from 'lucide-react';
 
 interface ProfileHeaderProps {
   username: string;
   followers: number;
   following: number;
   avatarUrl?: string;
-  bannerUrl?: string;
   isLive?: boolean;
   joinDate?: string;
   bio?: string;
@@ -21,31 +20,28 @@ const ProfileHeader = ({
   followers,
   following,
   avatarUrl,
-  bannerUrl = "/lovable-uploads/55836f5e-aa1a-488f-8f95-dfc554d30e8c.png",
   isLive = false,
   joinDate,
   bio
 }: ProfileHeaderProps) => {
   const formattedFollowers = followers > 999 ? `${(followers / 1000).toFixed(1)}K` : followers;
   const formattedFollowing = following > 999 ? `${(following / 1000).toFixed(1)}K` : following;
+  const streamerQuote = ""When you don't give up, you cannot fail." — Ninja";
   
   return (
     <Card className="border-0 overflow-hidden">
       <div className="relative">
-        {/* Banner */}
-        <div 
-          className="h-40 md:h-60 bg-gradient-to-r from-accent/50 to-accent" 
-          style={bannerUrl ? { 
-            backgroundImage: `url(${bannerUrl})`, 
-            backgroundSize: 'cover', 
-            backgroundPosition: 'center' 
-          } : {}}
-        >
+        {/* Banner with quote instead of image */}
+        <div className="h-40 md:h-60 bg-gradient-to-r from-accent/40 to-accent/20 flex items-center justify-center p-6">
+          <div className="flex items-center gap-3 text-center max-w-xl">
+            <Quote size={28} className="text-accent opacity-70" />
+            <p className="text-lg md:text-xl italic font-medium opacity-80">{streamerQuote}</p>
+          </div>
           <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
         </div>
         
-        {/* Avatar and basic info */}
-        <div className="absolute left-6 bottom-0 transform translate-y-1/2 flex items-end">
+        {/* Avatar and basic info - fixed positioning */}
+        <div className="absolute left-6 -bottom-14 md:-bottom-16 flex items-end">
           <div className="relative">
             <Avatar className="h-20 w-20 md:h-28 md:w-28 ring-4 ring-background">
               <AvatarImage src={avatarUrl} alt={username} />
@@ -77,7 +73,7 @@ const ProfileHeader = ({
         </div>
       </div>
       
-      <CardContent className="pt-16 p-6">
+      <CardContent className="pt-20 p-6"> {/* Increased top padding to make room for avatar */}
         <div className="space-y-4">
           <div>
             <h1 className="text-2xl font-bold flex items-center gap-2 text-primary">

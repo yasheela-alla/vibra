@@ -26,6 +26,11 @@ const MainLayout = ({ children, showSidebar = true, fullWidth = false }: MainLay
     setTheme(prev => prev === 'dark' ? 'light' : 'dark');
   };
 
+  // Calculate content width and margin based on sidebar state
+  const contentMarginLeft = showSidebar && !isMobile 
+    ? (sidebarCollapsed ? '4rem' : '16rem') 
+    : '0';
+
   return (
     <div className="flex flex-col min-h-screen">
       <NavBar toggleTheme={toggleTheme} theme={theme} />
@@ -37,10 +42,11 @@ const MainLayout = ({ children, showSidebar = true, fullWidth = false }: MainLay
           />
         )}
         <main 
-          className={`flex-1 mx-auto p-4 transition-all duration-300`}
+          className="flex-1 mx-auto p-4 transition-all duration-300"
           style={{ 
             maxWidth: fullWidth ? '100%' : '1400px',
-            marginLeft: showSidebar && !isMobile && !sidebarCollapsed ? '16rem' : '4rem',
+            marginLeft: contentMarginLeft,
+            width: '100%'
           }}
         >
           {children}
